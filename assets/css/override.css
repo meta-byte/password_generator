@@ -1,0 +1,44 @@
+body{
+    background-color: dimgray;
+    color: white;
+}
+
+.generator{
+    background-color: darkgrey;
+    box-shadow: 0px 1px 10px;
+    border-width: 2px;
+    border-style: solid;
+    margin-top: 200px;
+    padding: 30px;
+}
+
+h2{
+    margin-bottom: 15px;
+}
+textarea{
+    resize: none;
+    color: white !important;
+    background-color: rgb(70, 70, 70) !important;
+}
+
+numbers{
+    color: white;
+    background-color: #dc3445;
+
+}
+
+.checkboxes{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+.fullWidthButton{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-style: solid;
+    border-color: white;
+}
