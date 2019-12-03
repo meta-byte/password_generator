@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/override.css">
 </head>
 
 <body>
@@ -28,17 +29,36 @@
         crossorigin="anonymous"></script>
 
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="text-center">Password Generator</h1>
+        <div class="row justify-content-center">
+            <div class="col-6 generator">
 
-                <h2>Generate a Password</h2>
+                <h2 class="text-center">Generate a Password</h2>
 
-                <textarea class="form-control text-center" rows="3" placeholder="Your Secure Password"></textarea>
-                <br>
+                <textarea class="form-control text-center" rows="2" placeholder="Your Secure Password"
+                    id="passwordBox"></textarea>
 
-                <button type="button" class="btn btn-danger">Generate Password</button>
-                <button type="button" class="btn btn-secondary">Copy to Clipboard</button>
+                <div class="checkboxes">
+                    <label>Lowercase letters</label>
+                    <input type="checkbox" id="lowercase">
+                </div>
+                <div class="checkboxes">
+                    <label>Uppercase letters</label>
+                    <input type="checkbox" id="uppercase">
+                </div>
+                <div class="checkboxes">
+                    <label>Numbers</label>
+                    <input type="checkbox" id="numbers">
+                </div>
+                <div class="checkboxes">
+                    <label>Symbols</label>
+                    <input type="checkbox" id="symbols">
+                </div>
+
+                <button type="button" class="btn btn-danger fullWidthButton" id="generateButton">Generate
+                    Password</button>
+
+                <button type="button" class="btn btn-secondary fullWidthButton" id="clipboardButton">Copy to
+                    Clipboard</button>
 
             </div>
         </div>
