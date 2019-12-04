@@ -1,4 +1,5 @@
 //DOM Elements
+var lengthElement = document.querySelector('#passlength');
 var uppercaseElement = document.querySelector('#uppercase');
 var lowercaseElement = document.querySelector('#lowercase');
 var numbersElement = document.querySelector('#numbers');
@@ -54,20 +55,12 @@ function randomSymbol() {
     }
 }
 
-
 //Generate Password Functions
-
-function clear(outputElement) {
-    outputElement.value = "";
-}
-
-
 var newPassword
 
 function generatePassword() {
     var newPassword = ""
-    var length = 10;
-
+    var length = lengthElement.value
     for (var i = 0; i < length; i++) {
         newPassword += randomLowercase()
         newPassword += randomUppercase()
@@ -75,15 +68,13 @@ function generatePassword() {
         newPassword += randomSymbol()
     }
 
-    newPassword = newPassword.slice(0, 10)
+    newPassword = newPassword.slice(0, length)
     outputElement.value = newPassword
-    console.log(newPassword)
-    console.log(randomLowercase())
-    console.log(randomUppercase())
-    console.log(randomNumber())
-    console.log(randomSymbol())
 }
 
+function clear(outputElement) {
+    outputElement.value = "";
+}
 
 //Generate Button Click Function
 generateElement.addEventListener("click", function () {
@@ -91,5 +82,4 @@ generateElement.addEventListener("click", function () {
     generatePassword();
 })
 
-// generatePassword()
 //Copy to Clipboard
