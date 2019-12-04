@@ -1,11 +1,11 @@
 //DOM Elements
-var uppercaseElement = document.getElementById('uppercase');
-var lowercaseElement = document.getElementById('lowercase');
-var numbersElement = document.getElementById('numbers');
-var symbolsElement = document.getElementById('symbols');
-var outputElement = document.getElementById('passwordBox');
-var generateElement = document.getElementById('generateButton');
-var clipboardElement = document.getElementById('clipboardButton');
+var uppercaseElement = document.querySelector('#uppercase');
+var lowercaseElement = document.querySelector('#lowercase');
+var numbersElement = document.querySelector('#numbers');
+var symbolsElement = document.querySelector('#symbols');
+var outputElement = document.querySelector('#passwordBox');
+var generateElement = document.querySelector('#generateButton');
+var clipboardElement = document.querySelector('#clipboardButton');
 
 //Randomizing Functions Defined
 function randomLowercase() {
@@ -25,38 +25,42 @@ function randomSymbol() {
     return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
+
 // Array for storing functions?
 var randomFunctions = [randomLowercase(), randomUppercase(), randomNumber(), randomSymbol()]
 
 
-//For checking what is checked and what isnt?
-// var settings = {
-//     lower: uppercaseElement.checked,
-//     upper: lowercaseElement.checked,
-//     num: numbersElement.checked,
-//     sym: symbolsElement.checked,
-// }
+//Generate Password Functions
 
 
-//Generate Button Click Function
-generateElement.onclick = function () {
-    // outputElement.innerText = newPassword
+function clear(outputElement) {
+    outputElement.value = "";
 }
 
+var newPassword
 
-//Generate Password Function
 function generatePassword() {
-    var length = 10
     var newPassword = ""
+    var length = 10
     for (var i = 0; i < length; i++) {
         newPassword += randomLowercase()
         newPassword += randomUppercase()
         newPassword += randomNumber()
         newPassword += randomSymbol()
 
-        console.log(newPassword)
     }
+
+    newPassword = newPassword.slice(30)
+    outputElement.value = newPassword
+    console.log(newPassword)
 }
 
-generatePassword()
+
+//Generate Button Click Function
+generateElement.addEventListener("click", function () {
+    clear(outputElement);
+    generatePassword();
+})
+
+// generatePassword()
 //Copy to Clipboard
