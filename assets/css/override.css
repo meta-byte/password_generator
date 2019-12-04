@@ -35,6 +35,11 @@ numbers{
     align-items: center;
 }
 
+/* attempting to customize the checkbox color */
+input[type="checkbox"].checks:checked{
+    color: #dc3445;
+}
+
 .fullWidthButton{
     width: 100%;
     margin-top: 5px;
