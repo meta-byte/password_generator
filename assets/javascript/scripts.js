@@ -7,52 +7,81 @@ var outputElement = document.querySelector('#passwordBox');
 var generateElement = document.querySelector('#generateButton');
 var clipboardElement = document.querySelector('#clipboardButton');
 
-//Randomizing Functions Defined
+//Randomizing fuctions defined
 function randomLowercase() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+    var lowers = 'abcdefghijklmnopqrstuvwxyz'
+
+    if (lowercaseElement.checked == true) {
+        return lowers[Math.floor(Math.random() * lowers.length)]
+    }
+    else {
+        return ''
+    }
 }
 
 function randomUppercase() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+    var uppers = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    if (uppercaseElement.checked == true) {
+        return uppers[Math.floor(Math.random() * uppers.length)]
+    }
+
+    else {
+        return ''
+    }
 }
 
 function randomNumber() {
-    return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+    var numbers = '0123456789'
+
+    if (numbersElement.checked == true) {
+        return numbers[Math.floor(Math.random() * numbers.length)];
+    }
+
+    else {
+        return ''
+    }
+
 }
 
 function randomSymbol() {
     var symbols = '!@#$%^&*(){}[]=<>/'
-    return symbols[Math.floor(Math.random() * symbols.length)];
+    if (symbolsElement.checked == true) {
+        return symbols[Math.floor(Math.random() * symbols.length)];
+    }
+    else {
+        return ''
+    }
 }
 
 
-// Array for storing functions?
-var randomFunctions = [randomLowercase(), randomUppercase(), randomNumber(), randomSymbol()]
-
-
 //Generate Password Functions
-
 
 function clear(outputElement) {
     outputElement.value = "";
 }
 
+
 var newPassword
 
 function generatePassword() {
     var newPassword = ""
-    var length = 10
+    var length = 10;
+
     for (var i = 0; i < length; i++) {
         newPassword += randomLowercase()
         newPassword += randomUppercase()
         newPassword += randomNumber()
         newPassword += randomSymbol()
-
     }
 
-    newPassword = newPassword.slice(30)
+    newPassword = newPassword.slice(0, 10)
     outputElement.value = newPassword
     console.log(newPassword)
+    console.log(randomLowercase())
+    console.log(randomUppercase())
+    console.log(randomNumber())
+    console.log(randomSymbol())
 }
 
 
