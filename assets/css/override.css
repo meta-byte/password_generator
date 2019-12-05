@@ -1,10 +1,10 @@
 body{
-    background-color: dimgray;
+    background-color: lightslategray;
     color: white;
 }
 
 .generator{
-    background-color: darkgrey;
+    /* background-color: darkgrey; */
     box-shadow: 0px 1px 10px;
     border-width: 2px;
     border-style: solid;
@@ -19,10 +19,12 @@ textarea{
     resize: none;
     color: white !important;
     background-color: rgb(70, 70, 70) !important;
+    margin-bottom: 10px;
+    padding-top: 30px !important;
 }
 
 numbers{
-    color: white;
+    color: rgb(170, 29, 29);
     background-color: #dc3445;
 
 }
