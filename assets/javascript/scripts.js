@@ -83,3 +83,13 @@ generateElement.addEventListener("click", function () {
 })
 
 //Copy to Clipboard
+function copy() {
+    outputElement.select();
+    document.execCommand("copy");
+    alert("Your new password has been copied to the clipboard.")
+}
+
+// //Copy Button Click Function
+clipboardElement.addEventListener("click", function () {
+    copy()
+})
