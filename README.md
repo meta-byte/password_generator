@@ -3,7 +3,7 @@
 ## About
 My first real Javascript project, this password generator is designed to allow a user to create a secure password of a custom length using lowercase letters, uppercase letters, numbers, and symbols. 
 
-The length box will allow a password length of 0 to 30 characters. *In it's current state, this can be bypassed by manually typing in any number. The text area also does not prevent manual text entry.*
+The length box will allow a password length of 0 to 30 characters. *In it's current state this can be bypassed by manually typing in any number. The text area also does not prevent manual text entry.*
 
 The checkboxes will return empty strings to the functions they are assigned to if they are not checked. ALL of the randomizing functions are then called when the "Generate Password" button is clicked. 
 
